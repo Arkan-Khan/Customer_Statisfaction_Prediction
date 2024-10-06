@@ -6,9 +6,6 @@ __pycache__/
 # Virtual environment
 venv/
 
-# CSV data (if confidential)
-hotel_customer_data.csv
-
 # Logs and temporary files
 *.log
 *.env

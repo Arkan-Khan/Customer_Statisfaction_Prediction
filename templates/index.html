@@ -4,87 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Satisfaction Prediction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        label {
-            margin-top: 10px;
-            display: block;
-            font-weight: bold;
-        }
-        input[type="number"] {
-            margin-bottom: 15px;
-            padding: 8px;
-            width: 100%;
-            max-width: 300px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .results {
-            margin-top: 20px;
-            background-color: #e7f3fe;
-            border-left: 6px solid #2196F3;
-            padding: 10px;
-        }
-        a {
-            text-decoration: none;
-        }
-    </style>
 </head>
-<body>
-    <h1>Hotel Customer Satisfaction Prediction</h1>
-    <form method="POST">
-        <label for="cleanliness">Cleanliness Rating:</label>
-        <input type="number" id="cleanliness" name="cleanliness" min="1" max="10" required>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div style="background-color: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 40px; width: 90%; max-width: 500px; margin: 20px;">
+        <h1 style="color: #2c3e50; text-align: center; margin-bottom: 30px; font-size: 28px; border-bottom: 2px solid #3498db; padding-bottom: 10px;">Hotel Satisfaction Prediction</h1>
+        
+        <form method="POST" style="display: flex; flex-direction: column;">
+            <div style="margin-bottom: 20px;">
+                <label for="cleanliness" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Cleanliness Rating:</label>
+                <input type="number" id="cleanliness" name="cleanliness" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <label for="comfort">Comfort Rating:</label>
-        <input type="number" id="comfort" name="comfort" min="1" max="10" required>
+            <div style="margin-bottom: 20px;">
+                <label for="comfort" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Comfort Rating:</label>
+                <input type="number" id="comfort" name="comfort" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <label for="staff">Staff Performance:</label>
-        <input type="number" id="staff" name="staff" min="1" max="10" required>
+            <div style="margin-bottom: 20px;">
+                <label for="staff" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Staff Performance:</label>
+                <input type="number" id="staff" name="staff" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <label for="facilities">Facilities Rating:</label>
-        <input type="number" id="facilities" name="facilities" min="1" max="10" required>
+            <div style="margin-bottom: 20px;">
+                <label for="facilities" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Facilities Rating:</label>
+                <input type="number" id="facilities" name="facilities" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <label for="location">Location Rating:</label>
-        <input type="number" id="location" name="location" min="1" max="10" required>
+            <div style="margin-bottom: 20px;">
+                <label for="location" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Location Rating:</label>
+                <input type="number" id="location" name="location" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <label for="overall">Overall Score:</label>
-        <input type="number" id="overall" name="overall" min="1" max="10" required>
+            <div style="margin-bottom: 30px;">
+                <label for="overall" style="display: block; margin-bottom: 8px; color: #34495e; font-weight: 600;">Overall Score:</label>
+                <input type="number" id="overall" name="overall" min="1" max="5" required style="width: 100%; padding: 12px; border: 2px solid #bdc3c7; border-radius: 8px; font-size: 16px; transition: border-color 0.3s; outline: none;" oninput="if(this.value > 5) this.value = 5;">
+            </div>
 
-        <button type="submit">Predict</button>
-    </form>
+            <button type="submit" style="background: linear-gradient(to right, #3498db, #2980b9); color: white; padding: 15px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; transition: transform 0.2s; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Predict</button>
+        </form>
 
-    {% if prediction_results %}
-        <div class="results">
-            <h2>Prediction Results:</h2>
-            <ul>
-            {% for model, result in prediction_results.items() %}
-                <li>{{ model.replace('_', ' ').title() }} Prediction: {{ result }}</li>
-            {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
+        {% if prediction_results %}
+            <div style="margin-top: 30px; background-color: #e8f5fe; border-left: 5px solid #3498db; padding: 20px; border-radius: 8px;">
+                <h2 style="color: #2c3e50; margin-bottom: 15px; font-size: 22px;">Prediction Results:</h2>
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                {% for model, result in prediction_results.items() %}
+                    <li style="margin-bottom: 10px; color: #34495e; font-size: 16px;">{{ model.replace('_', ' ').title() }} Prediction: <span style="font-weight: 600; color: #2980b9;">{{ result }}</span></li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
 
-    <a href="/stats">
-        <button>Show Model Stats</button>
-    </a>
+        <a href="/stats" style="display: block; margin-top: 20px; text-decoration: none;">
+            <button style="width: 100%; background: linear-gradient(to right, #2ecc71, #27ae60); color: white; padding: 15px; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; transition: transform 0.2s; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Show Model Stats</button>
+        </a>
+    </div>
     
+    <script>
+        // Add hover effects and focus styles
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#3498db';
+            });
+            input.addEventListener('blur', function() {
+                this.style.borderColor = '#bdc3c7';
+            });
+        });
+
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
